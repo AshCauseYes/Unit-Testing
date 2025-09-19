@@ -11,7 +11,8 @@ public class Division {
     public boolean isPlayerEligible(Player player) {
         String playerBirthYear = String.valueOf(player.getBirthday().get(Calendar.YEAR));
 
-        return playerBirthYear.equals(startBirthYear) || playerBirthYear.equals(endBirthYear);
+        return Integer.parseInt(startBirthYear) <= Integer.parseInt(playerBirthYear) &&
+                Integer.parseInt(playerBirthYear) <= Integer.parseInt(endBirthYear);
     }
 
     public long getId() {
